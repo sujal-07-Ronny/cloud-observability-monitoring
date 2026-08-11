@@ -1,4 +1,3 @@
-
 # Datadog – AWS EC2 Monitoring
 
 ## Overview
@@ -18,12 +17,12 @@ This module covers setting up **Datadog** to monitor an AWS EC2 instance in real
 ## Project Components
 
 ### 1. EC2 Instance Setup
-*(`Screenshots/ec2-instance.png`)*
 
 Launched an AWS EC2 `t2.small` instance named **datadog-monitoring** in the Mumbai (`ap-south-1`) region and installed the Datadog Agent on it to begin streaming host-level telemetry to Datadog.
 
+![EC2 Instance](Screenshots/ec2-instance.png)
+
 ### 2. Infrastructure Dashboard
-*(`Screenshots/Dashboard.png`)*
 
 Built a custom dashboard ("Sujal's Dashboard") displaying live, real-time widgets for the monitored EC2 host:
 - **EC2 CPU Usage (%)**
@@ -33,8 +32,9 @@ Built a custom dashboard ("Sujal's Dashboard") displaying live, real-time widget
 
 This gives a single-pane view of the instance's health over a rolling time window (e.g., past 1 hour).
 
+![Dashboard](Screenshots/Dashboard.png)
+
 ### 3. Metric Monitor / Alert
-*(`Screenshots/Alert-Graph.png`)*
 
 Created a metric monitor named **"EC2 CPU High – Test Alert"** using the query:
 
@@ -44,10 +44,13 @@ avg(last_5m):avg:system.cpu.user{host:i-03d36c60beefc920b} > 1
 
 The monitor evaluates the average CPU utilization over the last 5 minutes and transitions to an **Alert** state when usage crosses the 1% test threshold, demonstrating how threshold-based alerting is configured in Datadog.
 
+![Alert Graph](Screenshots/Alert-Graph.png)
+
 ### 4. Email Notification
-*(`Screenshots/email-notification.png`)*
 
 Configured the monitor to send notifications on trigger. When the alert fired, Datadog automatically sent an email — *"Triggered: EC2 CPU High - Test Alert"* — containing the affected host ID and alert message, confirming the full notification pipeline works end-to-end.
+
+![Email Notification](Screenshots/email-notification.png)
 
 ---
 
