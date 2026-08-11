@@ -35,11 +35,35 @@ Each folder is a self-contained sub-project with its own detailed README and sup
 
 ## Project Components
 
-### 1. [Datadog](./Datadog)
-Real-time infrastructure monitoring of an AWS EC2 instance using the Datadog Agent — covering CPU, memory, disk, and network metrics, a custom dashboard, a threshold-based monitor, and email alerting.
+### 1. [Datadog](./Datadog) — Metrics-Based Monitoring
 
-### 2. [Splunk](./Splunk)
-Log ingestion and analysis of EC2 syslog data using Splunk Cloud — covering data onboarding, SPL searches for errors, failed services, and out-of-memory events, plus a trend visualization dashboard.
+Real-time infrastructure monitoring of an AWS EC2 instance using the Datadog Agent — CPU, memory, disk, and network metrics, a custom dashboard, a threshold-based monitor, and email alerting.
+
+<table>
+<tr>
+<td><img src="Datadog/Screenshots/Dashboard.png" width="420"/></td>
+<td><img src="Datadog/Screenshots/Alert-Graph.png" width="420"/></td>
+</tr>
+<tr>
+<td align="center"><sub>Infrastructure Dashboard</sub></td>
+<td align="center"><sub>CPU High Alert / Monitor</sub></td>
+</tr>
+</table>
+
+### 2. [Splunk](./Splunk) — Log-Based Analysis
+
+Log ingestion and analysis of EC2 syslog data using Splunk Cloud — data onboarding, SPL searches for errors, failed services, and out-of-memory events, plus a trend visualization dashboard.
+
+<table>
+<tr>
+<td><img src="Splunk/Screenshots/Dashboard.png" width="420"/></td>
+<td><img src="Splunk/Screenshots/Index-Failed.png" width="420"/></td>
+</tr>
+<tr>
+<td align="center"><sub>Error/Failed Trend Chart</sub></td>
+<td align="center"><sub>Failed Events Search</sub></td>
+</tr>
+</table>
 
 ---
 
